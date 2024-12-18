@@ -23,8 +23,6 @@ namespace SolidFixed
             var rect = new Rectangle { Height = 1, Width = 4 };
             Console.WriteLine("- Before:");
             fileCalculate.CalculateArea(rect);
-
-
             rect.SetDimensions(2, 3);
             Console.WriteLine("- After:");
             dbCalculate.CalculateArea(rect);
@@ -34,7 +32,6 @@ namespace SolidFixed
             var square = new Square { Side = 3 };
             Console.WriteLine($"- Before:");
             fileCalculate.CalculateArea(square);
-
             square.SetSize(4);
             Console.WriteLine($"- After:");
             dbCalculate.CalculateArea(square);
@@ -44,7 +41,6 @@ namespace SolidFixed
             var circle = new Circle { Radius = 1 };
             Console.WriteLine($"- Before:");
             fileCalculate.CalculateArea(circle);
-
             circle.SetSize(2);
             Console.WriteLine($"- After:");
             dbCalculate.CalculateArea(circle); ;
