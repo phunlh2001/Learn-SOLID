@@ -21,32 +21,32 @@ namespace SolidFixed
 
             Console.WriteLine("========== RECTANGLE ==========");
             var rect = new Rectangle { Height = 1, Width = 4 };
-            Console.WriteLine("- Area of Rectangle before change:");
+            Console.WriteLine("- Before:");
             fileCalculate.CalculateArea(rect);
 
 
             rect.SetDimensions(2, 3);
-            Console.WriteLine("- Area of Rectangle after change:");
+            Console.WriteLine("- After:");
             dbCalculate.CalculateArea(rect);
 
             Console.WriteLine("========== SQUARE ==========");
 
             var square = new Square { Side = 3 };
-            Console.WriteLine($"- Area of Square before resize:");
+            Console.WriteLine($"- Before:");
             fileCalculate.CalculateArea(square);
 
             square.SetSize(4);
-            Console.WriteLine($"- Area of Square after resized:");
+            Console.WriteLine($"- After:");
             dbCalculate.CalculateArea(square);
 
             Console.WriteLine("========== CIRCLE ==========");
 
             var circle = new Circle { Radius = 1 };
-            Console.WriteLine($"- Area of Circle before resize:");
+            Console.WriteLine($"- Before:");
             fileCalculate.CalculateArea(circle);
 
             circle.SetSize(2);
-            Console.WriteLine($"- Area of Square after resized:");
+            Console.WriteLine($"- After:");
             dbCalculate.CalculateArea(circle); ;
         }
     }
