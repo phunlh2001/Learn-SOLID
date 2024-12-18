@@ -6,6 +6,8 @@ namespace SolidFixed
     {
         static void Main(string[] args)
         {
+            var fileCalculate = new AreaCalculatorWithLogger(new FileLogger());
+            var dbCalculate = new AreaCalculatorWithLogger(new DatabaseLogger());
             /**
              * rect 1x4=4
              * rect.SetDimensions(2,3) => 6
@@ -19,33 +21,33 @@ namespace SolidFixed
 
             Console.WriteLine("========== RECTANGLE ==========");
             var rect = new Rectangle { Height = 1, Width = 4 };
-            Console.WriteLine($"Area of Rectangle before change: {rect.Area()}");
+            Console.WriteLine("- Area of Rectangle before change:");
+            fileCalculate.CalculateArea(rect);
+
 
             rect.SetDimensions(2, 3);
-            Console.WriteLine($"Area of Rectangle after change: {rect.Area()}");
+            Console.WriteLine("- Area of Rectangle after change:");
+            dbCalculate.CalculateArea(rect);
 
             Console.WriteLine("========== SQUARE ==========");
 
             var square = new Square { Side = 3 };
-            Console.WriteLine($"Area of Square before resize: {square.Area()}");
+            Console.WriteLine($"- Area of Square before resize:");
+            fileCalculate.CalculateArea(square);
 
             square.SetSize(4);
-            Console.WriteLine($"Area of Square after resized: {square.Area()}");
+            Console.WriteLine($"- Area of Square after resized:");
+            dbCalculate.CalculateArea(square);
 
             Console.WriteLine("========== CIRCLE ==========");
 
             var circle = new Circle { Radius = 1 };
-            Console.WriteLine($"Area of Circle before resize: {circle.Area()}");
+            Console.WriteLine($"- Area of Circle before resize:");
+            fileCalculate.CalculateArea(circle);
 
             circle.SetSize(2);
-            Console.WriteLine($"Area of Square after resized: {circle.Area()}");
-
-            Console.WriteLine("========== Logger ==========");
-            var fileLogger = new FileLogger();
-            fileLogger.Log("Hello World!");
-
-            var dbLogger = new DatabaseLogger();
-            dbLogger.Log("Hi Mom!");
+            Console.WriteLine($"- Area of Square after resized:");
+            dbCalculate.CalculateArea(circle); ;
         }
     }
 }
